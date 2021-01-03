@@ -25,9 +25,9 @@ BASE_DIR = os.path.dirname(
 SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
 
-ALLOWED_HOSTS = []
+
+ALLOWED_HOSTS = ['www.heroku.com', 'mpoyitshibuyi.herokuapp.com']
 
 
 # Application definition

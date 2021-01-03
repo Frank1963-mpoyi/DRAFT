@@ -1,3 +1,3 @@
-web: gunicorn config.settings.production.wsgi
+web: gunicorn config.wsgi
 
 
