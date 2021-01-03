@@ -3,7 +3,7 @@ from .views import  products, home
 
 urlpatterns = [
     path('products/',  products, name="products"),
-    path('index/',  home, name="index"), # javascript take the data from the urls of products , and pass it to his home.html
+    path('home/',  home, name="home"), # javascript take the data from the urls of products , and pass it to his home.html
     
     
 ]

@@ -3,6 +3,6 @@ from .views import upload, home
 
 urlpatterns = [
     path('', upload , name="upload"),
-    path('home', home , name="home")
+    path('index', home , name="index")
     
 ]

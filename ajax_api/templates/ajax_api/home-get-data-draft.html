@@ -49,15 +49,12 @@
             // now we adding the information to div shirt in html because it was blank now we will add with ajax
             // shirts.innerHTML = '<h4> Brand: '+  product.brand  + ' Price: ' + product.price +  '$</h4>'; 
             products.forEach(shirt =>{
-                // 2nd we must put button to send data in backend 
-                Nbutton = '<button type="submit" onclick="sendData('+ shirt.id +')"> show</button>';// onclick is when we want to click button and the function take the shirt id 
                 shirts.innerHTML += '<div class="shirt" ><img src='+ shirt.picture + '>' +
-                                    '<h4>'+ shirt.brand + ' ' + shirt.price + ' $</h4> '
-                                    + Nbutton + '</div>'// 
+                                    '<h4>'+ shirt.brand + ' ' + shirt.price + ' $</h4></div>'
 
             });
             
-            // console.log(products)
+            console.log(product)
         }
         // finally we use the method send which send the request to the server
         xhr.send()
@@ -65,22 +62,6 @@
     }
 
     onstart()
-
-    function sendData(ShirtId) {
-        // console.log(shirtId)
-        // after testing we are going to use xhml to send data to the server
-        // we use ajax to get data at the endpoint 
-        data = JSON.stringify({Shid: ShirtId});//to convert javascrit to Json
-        const xhr = new XMLHttpRequest(); 
-        const url = ''
-        xhr.responseType = 'json';         
-        xhr.open('POST', url);
-        xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');//here is in django documentation
-        xhr.send(data)
-
-        
-
-    }
 </script>
 {% endblock script %}
 
