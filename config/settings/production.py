@@ -9,7 +9,7 @@ import cloudinary.api
 DEBUG = config('DEBUG', cast=bool)
 
 
-ALLOWED_HOSTS = ['www.heroku.com']
+ALLOWED_HOSTS = ['www.heroku.com', 'mpoyitshibuyi.herokuapp.com']
 
 
 
