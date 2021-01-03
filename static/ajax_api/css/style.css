@@ -1,0 +1,24 @@
+
+h1{
+    text-align: center;
+}
+
+#shirts {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.shirt{
+    width: 40%;
+    margin: 10px;
+}
+
+.shirt img {
+    width: 100%;
+    height: 500px;
+}
+
+h4{
+    text-align: center;
+    margin-top: 10px;
+}

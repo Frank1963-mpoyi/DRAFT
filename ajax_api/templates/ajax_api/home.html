@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block title %}   {% endblock title %}
+
+
+
+
+{% block content %}
+
+<!-- this only work inside of the block content  -->
+<link rel="stylesheet" href="{% static 'ajax_api/css/style.css' %}">
+
+    <div class="container">
+        <h1>Shirt Store</h1>
+
+        <div id="shirts"></div>
+    </div>
+
+
+
+
+
+
+{% endblock content %}
+
+<!-- Understand -->
+
+{% block script %}
+<script>
+    var shirts = document.querySelector("#shirts");// we  can change the content above with javascript
+
+    function onstart(){
+        
+        // we use ajax to get data at the endpoint 
+        const xhr = new XMLHttpRequest(); //variable object
+        const url = '/products' //url for the endpoint or for the place we want to get data
+
+        xhr.responseType = 'json'; // is the type of the data in the response 
+        
+        // we using method open to initialize the request, like data in the url products
+        xhr.open('GET', url);
+
+        // call the function we executed when the request complete successfully
+        xhr.onload =function(){
+            // product = xhr.response; // we store the response in the variable product and the data is serialized
+            products = xhr.response.shirts;                                             // here the data is not serialized bcz .shirts is coming from views.py which was shirts dot all()
+            // now we adding the information to div shirt in html because it was blank now we will add with ajax
+            // shirts.innerHTML = '<h4> Brand: '+  product.brand  + ' Price: ' + product.price +  '$</h4>'; 
+            products.forEach(shirt =>{
+                shirts.innerHTML += '<div class="shirt" ><img src='+ shirt.picture + '>' +
+                                    '<h4>'+ shirt.brand + ' ' + shirt.price + ' $</h4></div>'
+
+            });
+            
+            console.log(product)
+        }
+        // finally we use the method send which send the request to the server
+        xhr.send()
+
+    }
+
+    onstart()
+</script>
+{% endblock script %}
+
+<!--  serialise and get data from end point api-->

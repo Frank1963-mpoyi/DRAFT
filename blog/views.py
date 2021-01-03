@@ -8,7 +8,10 @@ from .forms import PhotoForm
 
 def home (request):
     pictures = Photo.objects.get(id=4)
-    context = {'pictures':pictures}
+    context = {
+        'pictures':pictures,
+        'active_link':'home'
+        }
     return render(request, 'pictures/index.html', context)
 
 

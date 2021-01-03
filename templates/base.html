@@ -1,13 +1,55 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %} {% endblock %} | MY DRAFT</title>
+    
+    {% block style %} {% endblock style %}
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    
+    <!-- Local css -->
+    <link rel="stylesheet" href="{% static 'ajax_api/css/style.css' %}">
+    
+    <!-- Font aewesome  -->
+    <link rel="stylesheet" href="">
+
+    <title>{% block title %} Document {% endblock title %} | MY DRAFT </title>
+    
+   
 </head>
 <body>
+    
+    
+    {% include 'navbar.html' with brand_name="Mpoyi's Project" %}
+    
+
+
     {% block content %}
 
-    {% endblock %}
+    {% endblock content %}
+
+
+
+
+
+
+        <!--Jquery library  from Hosted Libraries-->
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
+    
+
+    <!-- Jquery Librairy  -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" ></script> 
+    
+    <!-- Popper Js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" ></script>
+    
+    <!-- Latest Compiled Js -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" ></script>
+    
+    <!-- Local Js -->
+    <script src="{% static 'ajax_api/js/main.js' %}"></script>
+    {% block script %} {% endblock script %}
 </body>
 </html>
