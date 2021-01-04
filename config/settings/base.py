@@ -6,7 +6,7 @@ import cloudinary.api
 import configparser
 from pathlib                                        import Path
 from decouple             import config
-import environ
+
 
 
 
@@ -74,8 +74,6 @@ TEMPLATES = [
 WSGI_APPLICATION = 'config.wsgi.application'
 
 
-# Database
-# https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
 DATABASES = {
     'default': {
@@ -153,11 +151,8 @@ MEDIA_ROOT= os.path.join(BASE_DIR, 'media')# for production
 
 
 
-
-
-
 cloudinary.config( 
-    cloud_name = "mpoyi", 
-    api_key = "343996562826747", 
-    api_secret = "drhcfy7eRgIHUjCw6Dch56-uzH8" 
+    cloud_name = config('CLOUD_NAME'), 
+    api_key =  config('API_KEY'), 
+    api_secret =  config('API_SECRET') 
 )
